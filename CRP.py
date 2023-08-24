@@ -12,7 +12,7 @@ import pyautogui
 def CreateRandomPass(length):
     alphabet = string.ascii_letters
     digits = string.digits
-    symbols = string.punctuation
+    symbols = str(set(string.punctuation) - set(['<', '>', ' ' ]))
     password = [
         secrets.choice(alphabet),
         secrets.choice(alphabet.lower()),
